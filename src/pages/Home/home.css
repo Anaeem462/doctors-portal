@@ -1,0 +1,25 @@
+.bg-chair-image {
+  background-image: url("../../assets/images/bg.png");
+  border: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.btn-bg-color {
+  background: linear-gradient(90deg, #19d3ae -22.5%, #0fcfec 120.83%);
+  border: none;
+  color: white;
+}
+.service-color {
+  color: #19d3ae;
+}
+.appointment-bg {
+  background-image: url("../../assets//images/appointment.png");
+  border: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.text-appointment {
+  color: #19d3ae;
+  font-weight: 700;
+  font-size: 20px;
+}
