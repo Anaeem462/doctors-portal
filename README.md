@@ -3,6 +3,16 @@ live site link : https://doctors-portal-auth-2022.web.app
 server-side-code : https://github.com/Anaeem462/doctors-portal-server
 
 
+==> That is a Full Stack website & This is a Online doctor's service booking site.
+ 
+==> Email passwords and Google log-in/sign-up are used here for authentication with firebase. The admin role is used here to manage clients and doctors.
+
+==> used Stripe Payment Method . Used jwt using for secure cleints/doctors data & authorization role. 
+
+Technology : React,Tailwind,daisyui, datepicker, firebase, express, jwt, mongodb & many more such features are used .
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
