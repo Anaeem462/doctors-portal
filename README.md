@@ -2,6 +2,10 @@ live site link : https://doctors-portal-auth-2022.web.app
 
 server-side-code : https://github.com/Anaeem462/doctors-portal-server
 
+admin email : abnaeem@gmail.com
+
+admin password : 123456@a
+
 
 ==> That is a Full Stack website & This is a Online doctor's service booking site.
  
