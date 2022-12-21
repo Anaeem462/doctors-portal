@@ -6,7 +6,7 @@ const UserAppointment = ({ date, data, setDeleteData }) => {
     // const { patientName, slot, appointmentDate, treatmentName } = data;
 
     return (
-        <div>
+        <div className='overflow-x-auto'>
             {data.length > 0 ? (
                 <table className='table w-full'>
                     <thead className='bg-[#E6E6E6] '>

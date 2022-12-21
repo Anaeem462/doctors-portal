@@ -63,11 +63,11 @@ const AllUsers = () => {
             {!userData?.length > 0 ? (
                 <p className='text-center text-red-600 text-4xl'>"No User"</p>
             ) : (
-                <div className='bg-slate-100 rounded-xl  py-8 px-4 '>
+                <div className='bg-slate-100 rounded-xl  py-8 px-4 overflow-x-auto'>
                     <h1 className='text-4xl mb-4'>ALL Users</h1>
 
-                    <table className='table w-full'>
-                        <thead className='bg-[#E6E6E6] '>
+                    <table className='table  '>
+                        <thead className='bg-[#E6E6E6]  '>
                             <tr className=''>
                                 <th>SN</th>
                                 <th>Name</th>
@@ -77,24 +77,29 @@ const AllUsers = () => {
                                 <th>delete</th>
                             </tr>
                         </thead>
-                        <tbody className=''>
+                        <tbody className='table-normal'>
                             {userData?.map((user, i) => (
                                 <tr key={user._id}>
                                     <th>{i + 1}</th>
                                     <td>{user.name}</td>
+
                                     <td title={user.password || user.Useruid}>{user.email}</td>
 
                                     <td>
                                         {" "}
-                                        {user?.role !== "Admin" && (
-                                            <button onClick={() => handleMakeAdmin(user)} className='btn btn-xs btn-primary mt-4'>
-                                                make adming
-                                            </button>
-                                        )}
+                                        <button
+                                            disabled={user.role === "Admin"}
+                                            onClick={() => handleMakeAdmin(user)}
+                                            className='btn btn-xs btn-primary mt-4'>
+                                            {user.role === "Admin" ? "Admin" : "make admin"}
+                                        </button>
                                     </td>
 
                                     <td>
-                                        <button onClick={() => handleDelete(user._id)} className='btn btn-xs mt-4 btn-error'>
+                                        <button
+                                            disabled={user.role === "Admin"}
+                                            onClick={() => handleDelete(user._id)}
+                                            className='btn btn-xs mt-4 btn-error'>
                                             x
                                         </button>
                                     </td>

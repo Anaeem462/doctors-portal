@@ -58,7 +58,7 @@ const AllDoctors = () => {
             ) : (
                 <div className='bg-slate-100  rounded-xl  py-8 px-4'>
                     <h1 className='text-4xl font-bold'>DOCTORS ARE :</h1>
-                    <div className='mt-10 mx-4'>
+                    <div className='mt-10 mx-4 overflow-x-auto'>
                         <table className='table w-full'>
                             <thead className='bg-[#E6E6E6] '>
                                 <tr className=''>
