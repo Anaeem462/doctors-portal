@@ -5,9 +5,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 import saveUser from "../../hooks/saveUser";
-
+import { Helmet } from "react-helmet";
 const SignUp = () => {
-    const { createUser, updateUser, googleSignin } = useContext(AuthContext);
+    const { createUser, updateUser, googleSignin, loading } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState();
 
     const navigate = useNavigate();
@@ -88,7 +88,12 @@ const SignUp = () => {
                             placeholder='Email'
                             {...register("email", {
                                 required: { value: true, message: "Email is required" },
+                                pattern: {
+                                    value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                                    message: "please Enter a valid email",
+                                },
                             })}
+                            // mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
                             aria-invalid={errors.email ? "true" : "false"}
                         />
                         {errors.email && <p className='text-red-700 text-[12px]'>{errors.email.message}</p>}
@@ -114,7 +119,9 @@ const SignUp = () => {
                         {errors.password && <p className='text-red-700 text-[12px]'>{errors.password.message}</p>}
                     </div>
 
-                    <input type='submit' value='Sign up' className='w-full btn bg-neutral mt-4 text-[#D4D9E3]' />
+                    <button className='w-full btn bg-neutral mt-4 text-[#D4D9E3]'>
+                        {loading ? <div className='animate-spin h-5 w-5  border-2 border-sky-500 border-l-0 rounded-full'></div> : "Sign Up"}
+                    </button>
 
                     <p className='my-2'>
                         Already Have an Account?{" "}

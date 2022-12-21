@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = ({ data }) => {
+    const navigate = useNavigate();
     const [clientSecretKey, setClientSecretKey] = useState();
     const [processing, setProcessing] = useState(false);
     const stripe = useStripe();
@@ -83,6 +85,7 @@ const Checkout = ({ data }) => {
                 .then((res) => res.json())
                 .then((result) => {
                     console.log(result);
+                    navigate("/dashboard");
                 })
                 .catch((err) => console.error(err.message));
         }

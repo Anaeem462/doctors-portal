@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { AuthContext } from "../../Context/AuthProvider";
+import { isDashboard } from "./../../pages/Dashboard/DashboardLayout/DashboardLayout";
+
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
+    const location = useLocation();
+    const path = location.pathname.split("/");
 
     const handleLogOut = () => {
         logOutUser()
@@ -14,7 +18,7 @@ const Navbar = () => {
     const navitems = (
         <React.Fragment>
             <li>
-                <Link className='btn btn-ghost' to='/'>
+                <Link className='btn btn-ghost rounded-lg' to='/'>
                     Home
                 </Link>
             </li>
@@ -42,7 +46,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link className='btn btn-ghost' to='/dashboard'>
+                        <Link className='btn btn-ghost rounded-lg' to='/dashboard'>
                             Dashboard
                         </Link>
                     </li>
@@ -56,7 +60,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link className='btn btn-ghost' to='/signup'>
+                        <Link className='btn btn-ghost rounded-lg' to='/signup'>
                             Sign up
                         </Link>
                     </li>
@@ -82,9 +86,11 @@ const Navbar = () => {
                             Doctors Portal
                         </Link>
                     </div>
-                    <label htmlFor='dashbord-drawer' className='btn btn-primary drawer-button lg:hidden'>
-                        <FaBars></FaBars>
-                    </label>
+                    {path[1] === "dashboard" && (
+                        <label htmlFor='dashbord-drawer' className='btn btn-primary drawer-button lg:hidden'>
+                            <FaBars></FaBars>
+                        </label>
+                    )}
                 </div>
                 <div className='navbar-center hidden lg:flex'>
                     <ul className='menu menu-horizontal p-0'>{navitems}</ul>

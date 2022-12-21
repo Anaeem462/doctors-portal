@@ -47,7 +47,7 @@ const Dashboard = () => {
         }
     };
     return (
-        <div className=' bg-slate-100 h-full rounded-xl  py-8 px-4'>
+        <div className=' bg-slate-100 h-full rounded-xl  py-8 px-4 '>
             <div className=' flex justify-between py-4'>
                 <h1 className='text-2xl'>My Appointment</h1>
                 <label htmlFor='date-modal' className='btn btn-outline'>

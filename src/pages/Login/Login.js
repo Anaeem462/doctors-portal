@@ -5,11 +5,12 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import saveUser from "../../hooks/saveUser";
+import Loading from "./../../Shared/Loading/Loading";
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { signUpUser, forgetPassword, googleSignin } = useContext(AuthContext);
+    const { signUpUser, forgetPassword, googleSignin, loading } = useContext(AuthContext);
     const [loginError, setLogInError] = useState();
 
     const {
@@ -110,8 +111,9 @@ const Login = () => {
                             </Link>
                         </label>
                     </div>
-
-                    <input type='submit' value='Log in' className='w-full btn bg-neutral mt-4 text-[#D4D9E3]' />
+                    <button className='w-full btn bg-neutral mt-4 text-[#D4D9E3]'>
+                        {loading ? <div className='animate-spin h-5 w-5  border-2 border-sky-500 border-l-0 rounded-full'></div> : "Log in"}
+                    </button>
 
                     <p className='my-2'>
                         New to Doctors Portal?{" "}

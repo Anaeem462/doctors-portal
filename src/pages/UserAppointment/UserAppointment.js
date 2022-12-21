@@ -44,7 +44,15 @@ const UserAppointment = ({ date, data, handleDelete }) => {
                     </tbody>
                 </table>
             ) : (
-                <p className='text-center text-red-600 text-4xl'>"No Service selected on {date}"</p>
+                <div>
+                    <p className='text-center text-red-600 text-4xl mt-5 '>"No Service booked on {date}"</p>
+                    <p className='text-center text-red-600 text-4xl my-5'>please booked an appointment</p>
+                    <div className='w-full flex justify-center'>
+                        <Link className='btn btn-xl btn-primary text-white' to='/appointment'>
+                            Appointment
+                        </Link>
+                    </div>
+                </div>
             )}
         </div>
     );

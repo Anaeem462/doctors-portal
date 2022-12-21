@@ -70,7 +70,7 @@ const AddDoctor = () => {
     return (
         <div>
             <h1 className='text-4xl font-bold'>ADD A NEW DOCTOR</h1>
-            <div className='w-1/3 p-7'>
+            <div className='bg-slate-100 rounded-xl  py-8 px-4 mt-5 '>
                 <form onSubmit={handleSubmit(handleAddDoctor)}>
                     <div className='form-control w-full'>
                         <div>
