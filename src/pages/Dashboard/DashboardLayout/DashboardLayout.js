@@ -13,22 +13,17 @@ const DashboardLayout = () => {
         <div>
             <Navbar></Navbar>
 
-            <div className='drawer drawer-mobile '>
-                <input id='dashbord-drawer' type='checkbox' className='drawer-toggle' />
-<<<<<<< HEAD
-
-                <div className='drawer-side  '>
-=======
-                <div className='drawer-content sm:w-full sm:mt-6 mx-4'>
+            <div className='drawer drawer-mobile'>
+                <input id='dashboard-drawer' type='checkbox' className='drawer-toggle' />
+                <div className='drawer-content flex justify-center pt-12'>
                     {/* <!-- Page content here --> */}
                     <Outlet></Outlet>
                 </div>
-                <div className='drawer-side  shadow-md'>
->>>>>>> 9c683e5c6fc39f00e6d91f696fd950edb33c7980
-                    <label htmlFor='dashbord-drawer' className='drawer-overlay'></label>
-                    <ul className='menu  p-4 text-base-content bg-white'>
-                        {/* <!-- Sidebar content here --> */}
 
+                <div className='drawer-side shadow-2xl'>
+                    <label htmlFor='dashboard-drawer' className='drawer-overlay'></label>
+                    <ul className='menu p-4 w-50 bg-base-100 text-base-content '>
+                        {/* <!-- Sidebar content here --> */}
                         <li>
                             <Link to='/dashboard'>My Appointmens</Link>
                         </li>
@@ -47,10 +42,6 @@ const DashboardLayout = () => {
                             </>
                         )}
                     </ul>
-                </div>
-                <div className='drawer-content   flex justify-center  py-10 '>
-                    {/* <!-- Page content here --> */}
-                    <Outlet></Outlet>
                 </div>
             </div>
         </div>

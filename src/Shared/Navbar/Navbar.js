@@ -87,8 +87,8 @@ const Navbar = () => {
                         </Link>
                     </div>
                     {path[1] === "dashboard" && (
-                        <label htmlFor='dashbord-drawer' className='btn btn-primary drawer-button lg:hidden'>
-                            <FaBars></FaBars>
+                        <label htmlFor='dashboard-drawer' className='btn btn-primary drawer-button lg:hidden'>
+                            <FaBars />
                         </label>
                     )}
                 </div>
