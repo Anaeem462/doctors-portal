@@ -17,7 +17,7 @@ const Contact = () => {
                     <form action='https://formsubmit.co/abdullahnaeem462@gmail.com' method='POST'>
                         <div className='form-control'>
                             <input type='text' placeholder='Email Address' className='input input-bordered mb-4' required />
-                            <input type='hidden' name='_next' value={process.env.REACT_APP_mysiteUrl || "http://localhost:3000/"} />
+                            <input type='hidden' name='_next' value={process.env.REACT_APP_mysiteUrl} />
                         </div>
                         <div className='form-control'>
                             <input type='text' placeholder='Subject' name='_subject' className='input input-bordered mb-4' required />

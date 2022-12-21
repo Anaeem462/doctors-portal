@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DeleteConfirmModal from "../Dashboard/DeleteConfirmModal";
 
-const UserAppointment = ({ date, data, handleDelete }) => {
+const UserAppointment = ({ date, data, setDeleteData }) => {
     // const { patientName, slot, appointmentDate, treatmentName } = data;
 
     return (
@@ -28,16 +29,22 @@ const UserAppointment = ({ date, data, handleDelete }) => {
                                 <td>{user.appointmentDate}</td>
                                 <td>{user.slot}</td>
                                 <td>
-                                    <Link to={`/dashboard/payment/${user._id}`}>
-                                        <button title={`$${user.price}`} className='btn btn-sm btn-primary'>
-                                            pay
-                                        </button>
+                                    <Link
+                                        disabled={user?.paid}
+                                        title={user.price}
+                                        className='btn btn-sm btn-primary'
+                                        to={`/dashboard/payment/${user._id}`}>
+                                        {user?.paid ? "payed" : "pay"}
                                     </Link>
                                 </td>
                                 <td className=''>
-                                    <button onClick={() => handleDelete(user._id)} className='btn btn-sm btn-warning'>
+                                    <label
+                                        htmlFor='delete-confirm-modal'
+                                        onClick={() => setDeleteData(user)}
+                                        disabled={user?.paid}
+                                        className='btn btn-sm btn-warning'>
                                         x
-                                    </button>
+                                    </label>
                                 </td>
                             </tr>
                         ))}

@@ -13,6 +13,7 @@ const Checkout = ({ data }) => {
     const [transactionId, setTransactionId] = useState();
     const { price, patientName, email, treatmentName, slot, appointmentDate, _id } = data;
 
+    console.log(process.env.REACT_APP_serverurl);
     useEffect(() => {
         fetch(`${process.env.REACT_APP_serverurl}/create-payment-intent`, {
             method: "POST",

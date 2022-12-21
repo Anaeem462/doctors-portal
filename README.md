@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+live site link : https://doctors-portal-auth-2022.web.app
+
+server-side-code : https://github.com/Anaeem462/doctors-portal-server
+
+admin email : abnaeem@gmail.com
+
+admin password : 123456@a
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
